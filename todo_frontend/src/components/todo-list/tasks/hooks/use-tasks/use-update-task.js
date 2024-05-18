@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useTodoListContract } from "../../../../../../store/todo-list-contract-provider";
+import { useTodoListContract } from "store/todo-list-contract-provider";
 import handleUpdate from "./utils/handle-update";
 
 const useUpdateTask = (updateTask) => {

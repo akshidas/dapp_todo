@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useTodoListContract } from "../../../../../../store/todo-list-contract-provider";
+import { useTodoListContract } from "store/todo-list-contract-provider";
 import getTasks from "./utils/get-tasks";
 
 const useGetTasks = (taskCount = 0) => {

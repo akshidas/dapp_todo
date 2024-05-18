@@ -1,8 +1,8 @@
 import { Container, Divider, Typography } from "@mui/material";
 import React from "react";
-import Tasks from "./components/tasks";
-import AddTask from "./components/tasks/add-task";
 import useGetTaskCount from "./hooks/use-get-task-count";
+import Tasks from "./tasks";
+import AddTask from "./tasks/components/add-task";
 
 const TodoList = () => {
   const [taskCount, getTaskCount] = useGetTaskCount("");
