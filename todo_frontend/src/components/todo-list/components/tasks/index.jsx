@@ -1,9 +1,10 @@
 import { Box, Checkbox, FormControlLabel, Stack } from "@mui/material";
 import React from "react";
-import useGetTasks from "./hooks/use-get-tasks";
+import useTask from "./hooks/use-tasks";
+import useGetTasks from "./hooks/use-tasks/use-get-tasks";
 
 const Tasks = ({ taskCount }) => {
-  const tasks = useGetTasks(taskCount);
+  const { tasks, toggleStatus } = useTask(taskCount);
 
   return (
     <Stack spacing={1} justifyContent="center">
@@ -15,9 +16,7 @@ const Tasks = ({ taskCount }) => {
                 width: "min-content",
                 whiteSpace: "nowrap",
               }}
-              onChange={(_, checked) => {
-                console.log(checked);
-              }}
+              onChange={toggleStatus(id)}
               key={id}
               label={content}
               control={<Checkbox checked={completed} />}

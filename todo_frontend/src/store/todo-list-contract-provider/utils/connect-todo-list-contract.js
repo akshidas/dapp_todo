@@ -1,8 +1,8 @@
 import { ethers } from "ethers";
 
-const connectTodoListContract = (signer, abi) => {
-  const CONTRACT_ID = "0x1b0cd073c926B51B0Ff765bB6cE38E0D54ecce58";
+const CONTRACT_ID = "0x1c642DF538e5C78a14244D4Dc4f4595376d71Dc1";
 
+const connectTodoListContract = (signer, abi) => {
   try {
     return new ethers.Contract(CONTRACT_ID, abi, signer);
   } catch (err) {
