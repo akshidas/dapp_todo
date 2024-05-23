@@ -13,21 +13,23 @@ contract TodoList {
         bool completed;
     }
 
+    event TaskAdded(string message);
     event Toggling(uint id, string content, bool completed);
     event Toggled(uint id, string content, bool completed);
+    event Removed(uint id, string message);
 
     constructor() public {
         addTask("Deploy the Smart Contract");
     }
 
-    function addTask(string memory _content) public returns (bool) {
+    function addTask(string memory _content) public {
         taskCount++;
         tasks[taskCount] = Task(taskCount, _content, false);
         availableTaskIds.push(taskCount);
-        return true;
+        emit TaskAdded("A New Task has been added");
     }
 
-    function removeTask(uint _id) public returns (bool) {
+    function removeTask(uint _id) public {
         if (taskExists(_id)) {
             delete tasks[_id];
             for (uint i = 0; i < availableTaskIds.length; i++) {
@@ -36,19 +38,16 @@ contract TodoList {
                     break;
                 }
             }
-            return true;
+            emit Removed(_id, "Task removed");
         }
-        return false;
     }
 
-    function markComplete(uint _id) public returns (bool) {
+    function markComplete(uint _id) public {
         if (taskExists(_id)) {
             Task storage task = tasks[_id];
             emit Toggling(task.id, task.content, task.completed);
             task.completed = !task.completed;
             emit Toggled(task.id, task.content, task.completed);
-
-            return true;
         }
     }
 

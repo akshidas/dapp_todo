@@ -4,7 +4,7 @@ import Tasks from "./tasks";
 import AddTask from "./tasks/components/add-task";
 
 const TodoList = () => {
-  const [taskIds, getTaskIds] = useGetTaskIds();
+  const taskIds = useGetTaskIds();
 
   return (
     <Container maxWidth="sm">
@@ -14,7 +14,7 @@ const TodoList = () => {
       <Divider />
       <Tasks taskIds={taskIds} />
       <Divider />
-      <AddTask getTaskIds={getTaskIds} />
+      <AddTask />
     </Container>
   );
 };

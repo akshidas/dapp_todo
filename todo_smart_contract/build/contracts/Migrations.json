@@ -969,12 +969,12 @@
     "1716474675052": {
       "events": {},
       "links": {},
-      "address": "0xd9417EdC4e53d957A4C8e16d2B42ac76ae072a46",
-      "transactionHash": "0x9f340d6b0dfe1e2c779a7fa743c0942803094cc4216966aeeccd9a22aa6ca1dd"
+      "address": "0x1FF3146AF822576967AF0E4Dc43C0FF7014461aE",
+      "transactionHash": "0x0c43c1afa6a888a08387254286da1c07446c6805717a3db0d4549da41fc7704d"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-23T15:49:53.085Z",
+  "updatedAt": "2024-05-23T17:34:17.441Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

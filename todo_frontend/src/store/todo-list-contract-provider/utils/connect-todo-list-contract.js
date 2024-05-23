@@ -1,6 +1,5 @@
+import { CONTRACT_ID } from "config";
 import { ethers } from "ethers";
-
-const CONTRACT_ID = "0x66C8fb8A70f046B9F2Aa217953ab57982268E812";
 
 const connectTodoListContract = (signer, abi) => {
   try {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useTodoListContract } from "../../../store/todo-list-contract-provider";
+import { useTodoListContract } from "store/todo-list-contract-provider";
 
 const useGetTaskIds = () => {
   const todoListContract = useTodoListContract();
@@ -15,10 +15,30 @@ const useGetTaskIds = () => {
   };
 
   useEffect(() => {
-    if (todoListContract) getTaskIds();
+    if (todoListContract) {
+      getTaskIds();
+    }
   }, [todoListContract]);
 
-  return [taskIds, getTaskIds];
+  useEffect(() => {
+    if (todoListContract) {
+      todoListContract.on("Removed", (id) => {
+        getTaskIds();
+        console.log(`deleted ${id}`);
+      });
+    }
+  }, [todoListContract]);
+
+  useEffect(() => {
+    if (todoListContract) {
+      todoListContract.on("TaskAdded", (message) => {
+        getTaskIds();
+        console.log(message);
+      });
+    }
+  }, [todoListContract]);
+
+  return taskIds;
 };
 
 export default useGetTaskIds;
