@@ -123,7 +123,7 @@
                 "name": "msg",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 211,
+                "referencedDeclaration": 270,
                 "src": "113:3:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_magic_message",
@@ -201,7 +201,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 211,
+                            "referencedDeclaration": 270,
                             "src": "211:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -277,10 +277,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        214,
-                        215
+                        273,
+                        274
                       ],
-                      "referencedDeclaration": 215,
+                      "referencedDeclaration": 274,
                       "src": "196:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -541,7 +541,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 211,
+                      "referencedDeclaration": 270,
                       "type": "msg",
                       "value": "msg"
                     },
@@ -635,10 +635,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                214,
-                                215
+                                273,
+                                274
                               ],
-                              "referencedDeclaration": 215,
+                              "referencedDeclaration": 274,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -679,7 +679,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 211,
+                                      "referencedDeclaration": 270,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -951,12 +951,30 @@
     "1716014561921": {
       "events": {},
       "links": {},
-      "address": "0x57E0E61461439dbACD22F7403F312DCc9efcDA0F",
-      "transactionHash": "0x8e3f8b417f1cae7ef5bf6977a0969e938e77f2fd89a37da4dfbafd2af55850cd"
+      "address": "0x5Ee61A294e275a20DCE6c648A17f2520aC452bC1",
+      "transactionHash": "0xf9612d38f525d11d11d499c9ecb06eb6daaa606440a7a08aee98e2f0082d1b0b"
+    },
+    "1716023037508": {
+      "events": {},
+      "links": {},
+      "address": "0x1ae443620851a5AA768bcFe02054fC6191071474",
+      "transactionHash": "0x88075e1373afba89b019421b91ae50191453ebca5b0a64cee7d974c56956e561"
+    },
+    "1716023928437": {
+      "events": {},
+      "links": {},
+      "address": "0x40CE2E32B57ea6e7E7F813132E66d07f1c19Cc2F",
+      "transactionHash": "0x6c7498e51d7b990f0dab61b57b65856005c3696d1637829304ec7077dc5a1db0"
+    },
+    "1716474675052": {
+      "events": {},
+      "links": {},
+      "address": "0x82E8C28fe5F9D638DfD79fE59Afc3f3a52D2fc0c",
+      "transactionHash": "0x652b59eaf3e3fc76e11dd05410b32bc62d4cdae44a462fa1bc206d680282b4f0"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-18T06:44:45.499Z",
+  "updatedAt": "2024-05-23T15:20:58.190Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
