@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTodoListContract } from "../../../../../../store/todo-list-contract-provider";
+import { useTodoListContract } from "store/todo-list-contract-provider";
 
 const useAddTask = (getTaskIds) => {
   const [taskContent, setTaskContent] = useState("");
