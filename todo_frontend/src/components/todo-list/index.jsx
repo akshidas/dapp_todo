@@ -4,19 +4,19 @@ import Tasks from "./tasks";
 import AddTask from "./tasks/components/add-task";
 
 const TodoList = () => {
-  const taskIds = useGetTaskIds();
+    const taskIds = useGetTaskIds();
 
-  return (
-    <Container maxWidth="sm">
-      <Typography textAlign="center" variant="h6">
-        Task Count: {taskIds.length}
-      </Typography>
-      <Divider />
-      <Tasks taskIds={taskIds} />
-      <Divider />
-      <AddTask />
-    </Container>
-  );
+    return (
+        <Container maxWidth="sm">
+            <Typography textAlign="center" variant="h6">
+                Task Count: {taskIds.length}
+            </Typography>
+            <Divider />
+            <Tasks taskIds={taskIds} />
+            <Divider />
+            <AddTask />
+        </Container>
+    );
 };
 
 export default TodoList;
