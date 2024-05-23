@@ -1,10 +1,11 @@
-import { Box, Checkbox, FormControlLabel } from "@mui/material";
-import React from "react";
+import { Checkbox, FormControlLabel, Stack } from "@mui/material";
+import Remove from "./components/remove";
 
 const Task = ({ task, onToggle }) => {
   const { id, content, completed } = task;
+
   return (
-    <Box>
+    <Stack direction="row" justifyContent="space-between" alignItems="center">
       <FormControlLabel
         sx={{
           width: "min-content",
@@ -15,7 +16,8 @@ const Task = ({ task, onToggle }) => {
         label={content}
         control={<Checkbox checked={completed} />}
       />
-    </Box>
+      <Remove id={id} />
+    </Stack>
   );
 };
 

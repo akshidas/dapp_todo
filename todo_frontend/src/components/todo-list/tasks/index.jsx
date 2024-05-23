@@ -4,8 +4,8 @@ import React from "react";
 import Task from "./components/task";
 import useTask from "./hooks/use-tasks";
 
-const Tasks = ({ taskCount }) => {
-  const { tasks, toggleStatus } = useTask(taskCount);
+const Tasks = ({ taskIds }) => {
+  const { tasks, toggleStatus } = useTask(taskIds);
 
   return (
     <Stack spacing={1} justifyContent="center">

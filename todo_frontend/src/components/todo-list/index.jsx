@@ -1,21 +1,20 @@
 import { Container, Divider, Typography } from "@mui/material";
-import React from "react";
-import useGetTaskCount from "./hooks/use-get-task-count";
+import useGetTaskIds from "./hooks/use-get-task-ids";
 import Tasks from "./tasks";
 import AddTask from "./tasks/components/add-task";
 
 const TodoList = () => {
-  const [taskCount, getTaskCount] = useGetTaskCount("");
+  const [taskIds, getTaskIds] = useGetTaskIds();
 
   return (
     <Container maxWidth="sm">
       <Typography textAlign="center" variant="h6">
-        Task Count: {taskCount}
+        Task Count: {taskIds.length}
       </Typography>
       <Divider />
-      <Tasks taskCount={taskCount} />
+      <Tasks taskIds={taskIds} />
       <Divider />
-      <AddTask getTaskCount={getTaskCount} />
+      <AddTask getTaskIds={getTaskIds} />
     </Container>
   );
 };

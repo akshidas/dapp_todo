@@ -1,15 +1,25 @@
 import { useEffect, useState } from "react";
 import { useTodoListContract } from "store/todo-list-contract-provider";
-import getTasks from "./utils/get-tasks";
 
-const useGetTasks = (taskCount = 0) => {
+const useGetTasks = (taskIds = []) => {
   const todoListContract = useTodoListContract();
   const [tasks, setTasks] = useState([]);
 
-  const fetchTasks = async (taskCount = 0) => {
-    if (taskCount === 0) return;
+  const fetchTasks = async (taskIds = []) => {
+    if (taskIds.length === 0) return;
+    let tasks = [];
+
     try {
-      const tasks = await getTasks(taskCount, todoListContract.tasks);
+      for (let i = 0; i < taskIds.length; i++) {
+        const task = await todoListContract.tasks(taskIds[i]);
+        const [_id, content, completed] = task;
+        tasks.push({
+          id: _id.toString(),
+          content,
+          completed,
+        });
+      }
+
       setTasks(tasks);
     } catch (err) {
       console.log(err);
@@ -17,10 +27,10 @@ const useGetTasks = (taskCount = 0) => {
   };
 
   useEffect(() => {
-    if (taskCount > 0) {
-      fetchTasks(taskCount);
+    if (taskIds.length > 0) {
+      fetchTasks(taskIds);
     }
-  }, [taskCount]);
+  }, [taskIds]);
 
   return [tasks, setTasks];
 };
