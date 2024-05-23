@@ -4,7 +4,7 @@ pragma solidity 0.5.16;
 // Todo: When redusing count the data gets invalidated
 contract TodoList {
     uint public taskCount = 0;
-    uint[] public availableTaskIds;
+    uint[] private availableTaskIds;
     mapping(uint => Task) public tasks;
 
     struct Task {
@@ -59,15 +59,19 @@ contract TodoList {
         return true;
     }
 
-    function getTaskIds() public view returns (uint[] memory) {
-        uint availableTaskLength = 0;
+    function getTaskCount() private view returns (uint) {
+        uint _taskCount = 0;
         for (uint i = 0; i < availableTaskIds.length; i++) {
             if (availableTaskIds[i] > 0) {
-                availableTaskLength++;
+                _taskCount++;
             }
         }
 
-        uint[] memory ids = new uint[](availableTaskLength);
+        return _taskCount;
+    }
+
+    function getTaskIds() public view returns (uint[] memory) {
+        uint[] memory ids = new uint[](getTaskCount());
         uint index = 0;
         for (uint i = 0; i < availableTaskIds.length; i++) {
             if (availableTaskIds[i] > 0) {
@@ -75,19 +79,6 @@ contract TodoList {
                 index++;
             }
         }
-
         return ids;
-
-        // uint counter = 0;
-        // uint i = 1;
-        // Task memory task;
-        // while (counter < taskCount) {
-        //     task = tasks[i];
-        //     if (task.id == i) {
-        //         ids[counter] = task.id;
-        //         counter++;
-        //     }
-        //     i++;
-        // }
     }
 }
